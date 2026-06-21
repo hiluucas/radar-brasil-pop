@@ -4,7 +4,8 @@
   "type": "module",
   "scripts": {
     "start": "node src/server.js",
-    "crawl:mapa": "node src/crawler.js"
+    "crawl:mapa": "node src/crawler.js",
+    "enriquecer:basico": "node src/enriquecedor-basico.js"
   },
   "dependencies": {
     "cheerio": "latest",
