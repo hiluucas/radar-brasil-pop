@@ -3,9 +3,11 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "start": "node src/server.js"
+    "start": "node src/server.js",
+    "crawl:mapa": "node src/crawler.js"
   },
   "dependencies": {
+    "cheerio": "latest",
     "express": "latest",
     "pg": "latest"
   }
