@@ -6,7 +6,8 @@
     "start": "node src/server.js",
     "crawl:mapa": "node src/crawler.js",
     "enriquecer:basico": "node src/enriquecedor-basico.js",
-    "enriquecer:groq": "node src/enriquecedor-groq.js"
+    "enriquecer:groq": "node src/enriquecedor-groq.js",
+    "corrigir:dados": "node src/corrigir-dados.js"
   },
   "dependencies": {
     "cheerio": "latest",
