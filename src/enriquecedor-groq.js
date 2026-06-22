@@ -82,9 +82,19 @@ function normalizarData(valor) {
     }
 
     const meses = {
-        janeiro: "01", fevereiro: "02", março: "03", marco: "03", abril: "04",
-        maio: "05", junho: "06", julho: "07", agosto: "08", setembro: "09",
-        outubro: "10", novembro: "11", dezembro: "12"
+        janeiro: "01",
+        fevereiro: "02",
+        marco: "03",
+        março: "03",
+        abril: "04",
+        maio: "05",
+        junho: "06",
+        julho: "07",
+        agosto: "08",
+        setembro: "09",
+        outubro: "10",
+        novembro: "11",
+        dezembro: "12"
     };
 
     const normalizado = texto
@@ -92,11 +102,15 @@ function normalizarData(valor) {
         .replace(/[\u0300-\u036f]/g, "")
         .toLowerCase();
 
-    const matchExtenso = normalizado.match(/(\d{1,2})\s+de\s+([a-zç]+)\s+de\s+(\d{4})/i);
+    const matchExtenso = normalizado.match(/^(\d{1,2})\s+de\s+([a-z]+)\s+de\s+(\d{4})$/);
+
     if (matchExtenso) {
         const [, dia, mesNome, ano] = matchExtenso;
         const mes = meses[mesNome];
-        if (mes) return `${ano}-${mes}-${dia.padStart(2, "0")}`;
+
+        if (mes) {
+            return `${ano}-${mes}-${dia.padStart(2, "0")}`;
+        }
     }
 
     return null;
